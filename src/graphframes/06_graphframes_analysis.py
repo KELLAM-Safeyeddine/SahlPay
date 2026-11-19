@@ -141,11 +141,12 @@ for row in sample:
     visual.add_edge(row.src, row.dst, count=row.transaction_count)
 fig, ax = plt.subplots(figsize=(10, 6))
 positions = nx.circular_layout(visual)
-nx.draw_networkx(visual, positions, ax=ax, node_color="#c8e6eb", node_size=2300, font_size=9,
+nx.draw_networkx(visual, positions, ax=ax, node_color="#c8e6eb", node_size=3500, font_size=14,
                  arrowsize=25, connectionstyle="arc3,rad=0.1")
-nx.draw_networkx_edge_labels(visual, positions, edge_labels=nx.get_edge_attributes(visual, "count"), ax=ax)
+nx.draw_networkx_edge_labels(visual, positions, edge_labels=nx.get_edge_attributes(visual, "count"), ax=ax, font_size=14)
 ax.set_title("Sous-graphe de transferts - nombres de transactions COMPLETED\nIndicateur structurel, a examiner par un analyste")
 ax.axis("off")
+ax.margins(x=.25, y=.25)
 fig.tight_layout()
 fig.savefig(destination / "sous_graphe_suspect.png", dpi=160)
 plt.close(fig)
