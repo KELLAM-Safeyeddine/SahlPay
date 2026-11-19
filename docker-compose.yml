@@ -1,0 +1,100 @@
+x-runtime: &runtime
+  image: sahlpay:3.5.3
+  build:
+    context: .
+    dockerfile: docker/jupyter/Dockerfile
+  user: root
+  volumes:
+    - .:/workspace
+    - spark-events:/opt/spark-events
+  environment: &environment
+    PYTHONPATH: /workspace/src:/opt/graphframes:/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
+    PYTHONDONTWRITEBYTECODE: "1"
+    SPARK_MASTER_URL: ${SPARK_MASTER_URL:-spark://spark-master:7077}
+    S3_ENDPOINT: ${S3_ENDPOINT:-http://minio:9000}
+    LAKE_BUCKET: ${LAKE_BUCKET:-lake}
+    MINIO_ROOT_USER: ${MINIO_ROOT_USER:-sahlpay_demo}
+    MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-sahlpay_demo_password}
+    KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+services:
+  kafka:
+    image: apache/kafka:3.8.0
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: INTERNAL://:9092,CONTROLLER://:9093,EXTERNAL://:29092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,EXTERNAL://localhost:${KAFKA_EXTERNAL_PORT:-29092}
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_HEAP_OPTS: -Xms256m -Xmx512m
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+    ports: ["127.0.0.1:${KAFKA_EXTERNAL_PORT:-29092}:29092"]
+    volumes: ["kafka-data:/var/lib/kafka/data"]
+    healthcheck:
+      test: [CMD-SHELL, "/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+  minio:
+    image: quay.io/minio/minio:RELEASE.2025-09-07T16-13-09Z
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-sahlpay_demo}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-sahlpay_demo_password}
+    ports:
+      - "127.0.0.1:${MINIO_API_PORT:-9000}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes: ["minio-data:/data"]
+  mc:
+    image: quay.io/minio/mc:RELEASE.2025-08-13T08-35-41Z
+    environment: *environment
+    volumes: [".:/workspace"]
+    entrypoint: [/bin/sh, -c]
+    command: ["until mc alias set local http://minio:9000 $$MINIO_ROOT_USER $$MINIO_ROOT_PASSWORD && mc ready local; do sleep 2; done; mc mb --ignore-existing local/lake"]
+    depends_on: [minio]
+  spark-master:
+    <<: *runtime
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080
+    ports: ["127.0.0.1:${MASTER_UI_PORT:-8080}:8080"]
+  spark-worker-1:
+    <<: *runtime
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --cores 1 --memory 1536m --webui-port 8081 spark://spark-master:7077
+    depends_on: [spark-master]
+  spark-history:
+    <<: *runtime
+    environment:
+      <<: *environment
+      SPARK_HISTORY_OPTS: -Dspark.history.fs.logDirectory=file:///opt/spark-events -Dspark.history.ui.port=18080
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.history.HistoryServer
+    ports: ["127.0.0.1:18080:18080"]
+  spark-worker-2:
+    <<: *runtime
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --cores 1 --memory 1536m --webui-port 8081 spark://spark-master:7077
+    depends_on: [spark-master]
+  jupyter:
+    <<: *runtime
+    environment:
+      <<: *environment
+      JUPYTER_TOKEN: ${JUPYTER_TOKEN:-sahlpay_demo_token}
+      PYSPARK_SUBMIT_ARGS: --conf spark.jars.ivySettings=/workspace/conf/ivysettings.xml --packages org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.262,org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.3,io.delta:delta-spark_2.12:3.2.1,graphframes:graphframes:0.8.3-spark3.5-s_2.12 pyspark-shell
+    command: /bin/bash -c 'mkdir -p /opt/spark-events /workspace/data /workspace/logs && jupyter lab --ip=0.0.0.0 --no-browser --allow-root --ServerApp.token="$$JUPYTER_TOKEN"'
+    ports:
+      - "127.0.0.1:${JUPYTER_PORT:-8888}:8888"
+      - "127.0.0.1:4040:4040"
+    depends_on: [spark-master, kafka, minio]
+  infra:
+    image: apache/kafka:3.8.0
+    entrypoint: [/bin/bash, /workspace/scripts/create_infra.sh]
+    volumes: [".:/workspace:ro"]
+    depends_on:
+      kafka: {condition: service_healthy}
+volumes:
+  kafka-data:
+  minio-data:
+  spark-events:
