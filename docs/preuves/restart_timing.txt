@@ -1,0 +1,6 @@
+{
+  "stopped_at_utc": "2026-11-19T21:25:25.924227+00:00",
+  "restart_requested_at_utc": "2026-11-19T21:27:26.475270+00:00",
+  "producer_running_throughout_pause": true,
+  "pause_seconds": 120.56383423700026
+}

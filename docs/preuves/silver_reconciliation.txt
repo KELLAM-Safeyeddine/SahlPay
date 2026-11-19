@@ -1,0 +1,8 @@
+{
+  "committed_kafka_events_from_offset_zero": 61093,
+  "progress_input_events": 61093,
+  "excluded_by_watermark": 114,
+  "excluded_duplicate_events": 1184,
+  "silver_rows": 59795,
+  "valid_synthetic_events_only": true
+}

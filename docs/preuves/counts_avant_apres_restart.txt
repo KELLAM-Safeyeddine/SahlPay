@@ -1,0 +1,41 @@
+{
+  "before": {
+    "snapshot": "before",
+    "gold_rows": 47,
+    "gold_duplicate_keys": 0,
+    "silver_rows": 54744,
+    "silver_duplicate_keys": 0,
+    "checkpoint_batch": "18",
+    "processed_offsets": {
+      "2": 18625,
+      "1": 18545,
+      "0": 18695
+    },
+    "kafka_end_offsets": {
+      "0": 19003,
+      "1": 18853,
+      "2": 18887
+    },
+    "offset_lag": 878
+  },
+  "after": {
+    "snapshot": "after",
+    "gold_rows": 47,
+    "gold_duplicate_keys": 0,
+    "silver_rows": 59795,
+    "silver_duplicate_keys": 0,
+    "checkpoint_batch": "33",
+    "processed_offsets": {
+      "2": 20299,
+      "1": 20264,
+      "0": 20530
+    },
+    "kafka_end_offsets": {
+      "0": 20530,
+      "1": 20264,
+      "2": 20299
+    },
+    "offset_lag": 0
+  },
+  "previous_gold_rows_unchanged": true
+}

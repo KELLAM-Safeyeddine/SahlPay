@@ -1,0 +1,66 @@
+{
+  "raw_console": {
+    "nonempty_microbatches": 8,
+    "input_rows": 51201,
+    "median_trigger_ms": 1195.5,
+    "median_reported_processing_rows_per_second": 1808.4349169741254,
+    "median_latest_event_age_at_batch_end_seconds": null,
+    "dropped_by_watermark": 0
+  },
+  "bronze_raw": {
+    "nonempty_microbatches": 7,
+    "input_rows": 51201,
+    "median_trigger_ms": 1299,
+    "median_reported_processing_rows_per_second": 3221.3273195876286,
+    "median_latest_event_age_at_batch_end_seconds": null,
+    "dropped_by_watermark": 0
+  },
+  "city_status_complete": {
+    "nonempty_microbatches": 7,
+    "input_rows": 51201,
+    "median_trigger_ms": 1860,
+    "median_reported_processing_rows_per_second": 5375.268817204301,
+    "median_latest_event_age_at_batch_end_seconds": 905.293,
+    "dropped_by_watermark": 0
+  },
+  "watermark_windows": {
+    "nonempty_microbatches": 7,
+    "input_rows": 51201,
+    "median_trigger_ms": 1813,
+    "median_reported_processing_rows_per_second": 5515.168229453944,
+    "median_latest_event_age_at_batch_end_seconds": 905.376,
+    "dropped_by_watermark": 0
+  },
+  "gold_tumbling": {
+    "nonempty_microbatches": 30,
+    "input_rows": 40203,
+    "median_trigger_ms": 2637.5,
+    "median_reported_processing_rows_per_second": 78.13629669299772,
+    "median_latest_event_age_at_batch_end_seconds": 12.6065,
+    "dropped_by_watermark": 0
+  },
+  "gold_sliding": {
+    "nonempty_microbatches": 31,
+    "input_rows": 40203,
+    "median_trigger_ms": 1292,
+    "median_reported_processing_rows_per_second": 154.33070866141733,
+    "median_latest_event_age_at_batch_end_seconds": 11.322,
+    "dropped_by_watermark": 0
+  },
+  "gold_sessions": {
+    "nonempty_microbatches": 31,
+    "input_rows": 40203,
+    "median_trigger_ms": 1092,
+    "median_reported_processing_rows_per_second": 205.53780617678382,
+    "median_latest_event_age_at_batch_end_seconds": 11.124,
+    "dropped_by_watermark": 0
+  },
+  "production_silver": {
+    "nonempty_microbatches": 33,
+    "input_rows": 61093,
+    "median_trigger_ms": 1289,
+    "median_reported_processing_rows_per_second": 178.03365810451726,
+    "median_latest_event_age_at_batch_end_seconds": 1.316,
+    "dropped_by_watermark": 114
+  }
+}

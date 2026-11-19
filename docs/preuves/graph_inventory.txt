@@ -1,0 +1,16 @@
++--------+-----+
+|type    |count|
++--------+-----+
+|merchant|168  |
+|wallet  |1038 |
+|device  |792  |
++--------+-----+
++------------+-----+
+|relationship|count|
++------------+-----+
+|USES_DEVICE |811  |
+|PAYS        |1636 |
+|TRANSFERS_TO|851  |
++------------+-----+
+
+orphelines exclues=0

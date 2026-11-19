@@ -1,0 +1,105 @@
+== Parsed Logical Plan ==
+GlobalLimit 20
++- LocalLimit 20
+   +- Sort [pagerank#463 DESC NULLS LAST, id#272 ASC NULLS FIRST], true
+      +- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L, pagerank#463]
+         +- Join Inner, (vertex_id#271L = vertex_id#462L)
+            :- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L]
+            :  +- Join Inner, (vertex_id#271L = vertex_id#383L)
+            :     :- Project [_1#264L AS vertex_id#271L, _2#265 AS id#272, _3#266 AS graphx_degree#273]
+            :     :  +- SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._1 AS _1#264L, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._2, true, false, true) AS _2#265, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._3 AS _3#266]
+            :     :     +- ExternalRDD [obj#263]
+            :     +- Project [_1#378L AS vertex_id#383L, _2#379L AS component#384L]
+            :        +- SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#378L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#379L]
+            :           +- ExternalRDD [obj#377]
+            +- Project [_1#457L AS vertex_id#462L, _2#458 AS pagerank#463]
+               +- SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#457L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#458]
+                  +- ExternalRDD [obj#456]
+
+== Analyzed Logical Plan ==
+vertex_id: bigint, id: string, graphx_degree: int, component: bigint, pagerank: double
+GlobalLimit 20
++- LocalLimit 20
+   +- Sort [pagerank#463 DESC NULLS LAST, id#272 ASC NULLS FIRST], true
+      +- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L, pagerank#463]
+         +- Join Inner, (vertex_id#271L = vertex_id#462L)
+            :- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L]
+            :  +- Join Inner, (vertex_id#271L = vertex_id#383L)
+            :     :- Project [_1#264L AS vertex_id#271L, _2#265 AS id#272, _3#266 AS graphx_degree#273]
+            :     :  +- SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._1 AS _1#264L, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._2, true, false, true) AS _2#265, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._3 AS _3#266]
+            :     :     +- ExternalRDD [obj#263]
+            :     +- Project [_1#378L AS vertex_id#383L, _2#379L AS component#384L]
+            :        +- SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#378L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#379L]
+            :           +- ExternalRDD [obj#377]
+            +- Project [_1#457L AS vertex_id#462L, _2#458 AS pagerank#463]
+               +- SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#457L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#458]
+                  +- ExternalRDD [obj#456]
+
+== Optimized Logical Plan ==
+GlobalLimit 20
++- LocalLimit 20
+   +- Sort [pagerank#463 DESC NULLS LAST, id#272 ASC NULLS FIRST], true
+      +- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L, pagerank#463]
+         +- Join Inner, (vertex_id#271L = vertex_id#462L)
+            :- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L]
+            :  +- Join Inner, (vertex_id#271L = vertex_id#383L)
+            :     :- InMemoryRelation [vertex_id#271L, id#272, graphx_degree#273], StorageLevel(disk, memory, deserialized, 1 replicas)
+            :     :     +- *(1) Project [_1#264L AS vertex_id#271L, _2#265 AS id#272, _3#266 AS graphx_degree#273]
+            :     :        +- *(1) SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._1 AS _1#264L, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._2, true, false, true) AS _2#265, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._3 AS _3#266]
+            :     :           +- Scan[obj#263]
+            :     +- InMemoryRelation [vertex_id#383L, component#384L], StorageLevel(disk, memory, deserialized, 1 replicas)
+            :           +- *(1) Project [_1#378L AS vertex_id#383L, _2#379L AS component#384L]
+            :              +- *(1) SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#378L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#379L]
+            :                 +- Scan[obj#377]
+            +- InMemoryRelation [vertex_id#462L, pagerank#463], StorageLevel(disk, memory, deserialized, 1 replicas)
+                  +- *(1) Project [_1#457L AS vertex_id#462L, _2#458 AS pagerank#463]
+                     +- *(1) SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#457L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#458]
+                        +- Scan[obj#456]
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- TakeOrderedAndProject(limit=20, orderBy=[pagerank#463 DESC NULLS LAST,id#272 ASC NULLS FIRST], output=[vertex_id#271L,id#272,graphx_degree#273,component#384L,pagerank#463])
+   +- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L, pagerank#463]
+      +- BroadcastHashJoin [vertex_id#271L], [vertex_id#462L], Inner, BuildRight, false
+         :- Project [vertex_id#271L, id#272, graphx_degree#273, component#384L]
+         :  +- BroadcastHashJoin [vertex_id#271L], [vertex_id#383L], Inner, BuildRight, false
+         :     :- InMemoryTableScan [vertex_id#271L, id#272, graphx_degree#273]
+         :     :     +- InMemoryRelation [vertex_id#271L, id#272, graphx_degree#273], StorageLevel(disk, memory, deserialized, 1 replicas)
+         :     :           +- *(1) Project [_1#264L AS vertex_id#271L, _2#265 AS id#272, _3#266 AS graphx_degree#273]
+         :     :              +- *(1) SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._1 AS _1#264L, staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._2, true, false, true) AS _2#265, knownnotnull(assertnotnull(input[0, scala.Tuple3, true]))._3 AS _3#266]
+         :     :                 +- Scan[obj#263]
+         :     +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, bigint, false]),false), [plan_id=824]
+         :        +- InMemoryTableScan [vertex_id#383L, component#384L]
+         :              +- InMemoryRelation [vertex_id#383L, component#384L], StorageLevel(disk, memory, deserialized, 1 replicas)
+         :                    +- *(1) Project [_1#378L AS vertex_id#383L, _2#379L AS component#384L]
+         :                       +- *(1) SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#378L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#379L]
+         :                          +- Scan[obj#377]
+         +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, bigint, false]),false), [plan_id=828]
+            +- InMemoryTableScan [vertex_id#462L, pagerank#463]
+                  +- InMemoryRelation [vertex_id#462L, pagerank#463], StorageLevel(disk, memory, deserialized, 1 replicas)
+                        +- *(1) Project [_1#457L AS vertex_id#462L, _2#458 AS pagerank#463]
+                           +- *(1) SerializeFromObject [knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._1 AS _1#457L, knownnotnull(assertnotnull(input[0, scala.Tuple2, true]))._2 AS _2#458]
+                              +- Scan[obj#456]
+
+[88520021217736833,wallet:W-COLLECTOR,30,88520021217736833,9.391825039716684]
+[87434958656887034,wallet:W-0017,2,87434958656887034,2.3613845798770705]
+[442597302667955638,wallet:W-0022,2,280498647953541761,2.3613845798770705]
+[85443456243941575,wallet:W-0037,2,85443456243941575,2.3613845798770705]
+[61150010894768230,wallet:W-0042,2,61150010894768230,2.3613845798770705]
+[451963817764660998,wallet:W-0052,2,194210403643947892,2.3613845798770705]
+[716926474989507640,wallet:W-0057,2,65759885547643518,2.3613845798770705]
+[39780145220526691,wallet:W-0067,2,39780145220526691,2.3613845798770705]
+[89906762610520923,wallet:W-0072,2,89906762610520923,2.3613845798770705]
+[950678655628955705,wallet:W-0077,2,78327199187985157,2.3613845798770705]
+[18932167104482115,wallet:W-0082,2,18932167104482115,2.3613845798770705]
+[591990406518320294,wallet:W-0087,2,266994972773534843,2.3613845798770705]
+[809460210624957505,wallet:W-0092,2,90874220560221612,2.3613845798770705]
+[1136149093428840076,wallet:W-0102,2,134897871353304543,2.3613845798770705]
+[546997396253899106,wallet:W-0112,2,515166002427132271,2.3613845798770705]
+[208459858424263899,wallet:W-0117,2,3502656020124805,2.3613845798770705]
+[122065059365247858,wallet:W-0122,2,18932167104482115,2.3613845798770705]
+[89944564899084122,wallet:W-0127,2,89944564899084122,2.3613845798770705]
+[650171373627455060,wallet:W-0132,2,87434958656887034,2.3613845798770705]
+[1149226156529930442,wallet:W-0137,2,507060828133045717,2.3613845798770705]
+pageRank_seconds=8.015506253
+connectedComponents_seconds=3.58547278

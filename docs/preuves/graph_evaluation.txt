@@ -1,0 +1,12 @@
+{
+  "ground_truth_available": true,
+  "alerts": 7,
+  "graphframes_degree_seconds": 1.4122927020000589,
+  "graphframes_component_seconds": 6.394986587999938,
+  "degree_vertices": 1038,
+  "expected": 5,
+  "recovered": 5,
+  "missed": [],
+  "estimated_false_positives": 2,
+  "false_positive_assumption": "Tout cas hors scenarios injectes est considere negatif pour cette estimation synthetique"
+}

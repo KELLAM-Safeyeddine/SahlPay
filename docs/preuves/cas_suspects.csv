@@ -1,0 +1,8 @@
+anomaly_type,entity,value,threshold,reason,injected_ground_truth
+collector,wallet:W-COLLECTOR,1478,20,virements recus; 30 emetteurs distincts (minimum 5),True
+cycle,wallet:W-CYCLE-A,1,1,cycle dirige de longueur 3: wallet:W-CYCLE-A -> wallet:W-CYCLE-B -> wallet:W-CYCLE-C -> wallet:W-CYCLE-A,True
+cycle,wallet:W-CYCLE-B,1,1,cycle dirige de longueur 3: wallet:W-CYCLE-A -> wallet:W-CYCLE-B -> wallet:W-CYCLE-C -> wallet:W-CYCLE-A,True
+cycle,wallet:W-CYCLE-C,1,1,cycle dirige de longueur 3: wallet:W-CYCLE-A -> wallet:W-CYCLE-B -> wallet:W-CYCLE-C -> wallet:W-CYCLE-A,True
+large_component,component:0,69,25,taille de composante faiblement connexe des transferts,False
+large_component,component:468,31,25,taille de composante faiblement connexe des transferts,False
+shared_device,device:D-SHARED,20,5,comptes distincts sur le meme appareil,True

@@ -1,0 +1,103 @@
+{
+  "emitted_at": "2026-11-19T21:15:37.172460+00:00",
+  "delay_seconds": 900,
+  "event": {
+    "tx_id": "TX-PROBE-6544d6c3e13142ba8f0612dda7981985",
+    "type": "P2M",
+    "payer_wallet": "W-PROBE",
+    "payee_id": "M-001",
+    "device_id": "D-PROBE",
+    "city": "Rabat",
+    "channel": "APP",
+    "status": "COMPLETED",
+    "amount_mad": 25.0,
+    "event_time": "2026-11-19T21:00:37.172460Z"
+  },
+  "watermark_before": "2026-11-19T21:05:17.369Z",
+  "partition": 1,
+  "offset": 16981,
+  "progress_after": {
+    "query": "watermark_windows",
+    "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb",
+    "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2",
+    "name": "watermark_windows",
+    "timestamp": "2026-11-19T21:15:40.001Z",
+    "batchId": 7,
+    "numInputRows": 1,
+    "inputRowsPerSecond": 0.09999000099990002,
+    "processedRowsPerSecond": 0.39261876717707106,
+    "durationMs": {
+      "addBatch": 2385,
+      "commitOffsets": 42,
+      "getBatch": 0,
+      "latestOffset": 21,
+      "queryPlanning": 14,
+      "triggerExecution": 2547,
+      "walCommit": 82
+    },
+    "eventTime": {
+      "avg": "2026-11-19T21:00:37.172Z",
+      "max": "2026-11-19T21:00:37.172Z",
+      "min": "2026-11-19T21:00:37.172Z",
+      "watermark": "2026-11-19T21:05:17.369Z"
+    },
+    "stateOperators": [
+      {
+        "operatorName": "stateStoreSave",
+        "numRowsTotal": 12,
+        "numRowsUpdated": 1,
+        "allUpdatesTimeMs": 13,
+        "numRowsRemoved": 0,
+        "allRemovalsTimeMs": 2,
+        "commitTimeMs": 88,
+        "memoryUsedBytes": 4328,
+        "numRowsDroppedByWatermark": 0,
+        "numShufflePartitions": 2,
+        "numStateStoreInstances": 2,
+        "customMetrics": {
+          "loadedMapCacheHitCount": 28,
+          "loadedMapCacheMissCount": 0,
+          "stateOnCurrentVersionSizeBytes": 3040
+        }
+      }
+    ],
+    "sources": [
+      {
+        "description": "KafkaV2[Subscribe[transactions]]",
+        "startOffset": {
+          "transactions": {
+            "2": 17003,
+            "1": 16981,
+            "0": 17216
+          }
+        },
+        "endOffset": {
+          "transactions": {
+            "2": 17003,
+            "1": 16982,
+            "0": 17216
+          }
+        },
+        "latestOffset": {
+          "transactions": {
+            "2": 17003,
+            "1": 16982,
+            "0": 17216
+          }
+        },
+        "numInputRows": 1,
+        "inputRowsPerSecond": 0.09999000099990002,
+        "processedRowsPerSecond": 0.39261876717707106,
+        "metrics": {
+          "avgOffsetsBehindLatest": "0.0",
+          "maxOffsetsBehindLatest": "0",
+          "minOffsetsBehindLatest": "0"
+        }
+      }
+    ],
+    "sink": {
+      "description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3",
+      "numOutputRows": 0
+    }
+  }
+}

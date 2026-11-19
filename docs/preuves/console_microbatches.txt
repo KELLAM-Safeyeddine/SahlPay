@@ -1,0 +1,669 @@
+:: loading settings :: file = /workspace/conf/ivysettings.xml
+https://repo.maven.apache.org/maven2 added as a remote repository with the name: repo-1
+https://repos.spark-packages.org added as a remote repository with the name: repo-2
+:: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /root/.ivy2/cache
+The jars for the packages stored in: /root/.ivy2/jars
+org.apache.hadoop#hadoop-aws added as a dependency
+com.amazonaws#aws-java-sdk-bundle added as a dependency
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+io.delta#delta-spark_2.12 added as a dependency
+graphframes#graphframes added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-e9efd0e0-ed2e-4220-8321-b63dab6b942b;1.0
+	confs: [default]
+	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.3 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.3 in central
+	found org.apache.kafka#kafka-clients;3.4.1 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.5 in central
+	found org.slf4j#slf4j-api;2.0.7 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+	found commons-logging#commons-logging;1.1.3 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.apache.commons#commons-pool2;2.11.1 in central
+	found io.delta#delta-spark_2.12;3.2.1 in central
+	found io.delta#delta-storage;3.2.1 in central
+	found org.antlr#antlr4-runtime;4.9.3 in central
+	found graphframes#graphframes;0.8.3-spark3.5-s_2.12 in spark-packages
+:: resolution report :: resolve 1503ms :: artifacts dl 28ms
+	:: evicted modules:
+	org.slf4j#slf4j-api;1.7.16 by [org.slf4j#slf4j-api;2.0.7] in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   19  |   0   |   0   |   1   ||   18  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-e9efd0e0-ed2e-4220-8321-b63dab6b942b
+	confs: [default]
+	0 artifacts copied, 18 already retrieved (0kB/22ms)
+26/11/19 21:14:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/11/19 21:14:13 INFO SparkContext: Running Spark version 3.5.3
+26/11/19 21:14:13 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/11/19 21:14:13 INFO SparkContext: Java version 17.0.13
+26/11/19 21:14:13 INFO ResourceUtils: ==============================================================
+26/11/19 21:14:13 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/11/19 21:14:13 INFO ResourceUtils: ==============================================================
+26/11/19 21:14:13 INFO SparkContext: Submitted application: SahlPay - Partie 4 Streaming
+26/11/19 21:14:13 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 768, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/11/19 21:14:13 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/11/19 21:14:13 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/11/19 21:14:13 INFO SecurityManager: Changing view acls to: root
+26/11/19 21:14:13 INFO SecurityManager: Changing modify acls to: root
+26/11/19 21:14:13 INFO SecurityManager: Changing view acls groups to: 
+26/11/19 21:14:13 INFO SecurityManager: Changing modify acls groups to: 
+26/11/19 21:14:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/11/19 21:14:13 INFO Utils: Successfully started service 'sparkDriver' on port 43709.
+26/11/19 21:14:13 INFO SparkEnv: Registering MapOutputTracker
+26/11/19 21:14:13 INFO SparkEnv: Registering BlockManagerMaster
+26/11/19 21:14:13 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/11/19 21:14:13 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/11/19 21:14:13 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/11/19 21:14:13 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1b04162a-5cb0-44de-b47e-3a295e29af00
+26/11/19 21:14:13 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/11/19 21:14:13 INFO SparkEnv: Registering OutputCommitCoordinator
+26/11/19 21:14:13 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/11/19 21:14:13 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar at spark://jupyter:43709/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.262.jar at spark://jupyter:43709/jars/com.amazonaws_aws-java-sdk-bundle-1.12.262.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.3.jar at spark://jupyter:43709/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.3.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/io.delta_delta-spark_2.12-3.2.1.jar at spark://jupyter:43709/jars/io.delta_delta-spark_2.12-3.2.1.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/graphframes_graphframes-0.8.3-spark3.5-s_2.12.jar at spark://jupyter:43709/jars/graphframes_graphframes-0.8.3-spark3.5-s_2.12.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar at spark://jupyter:43709/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.3.jar at spark://jupyter:43709/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.3.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at spark://jupyter:43709/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://jupyter:43709/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://jupyter:43709/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at spark://jupyter:43709/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://jupyter:43709/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.5.jar at spark://jupyter:43709/jars/org.xerial.snappy_snappy-java-1.1.10.5.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at spark://jupyter:43709/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at spark://jupyter:43709/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://jupyter:43709/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/io.delta_delta-storage-3.2.1.jar at spark://jupyter:43709/jars/io.delta_delta-storage-3.2.1.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.antlr_antlr4-runtime-4.9.3.jar at spark://jupyter:43709/jars/org.antlr_antlr4-runtime-4.9.3.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar at spark://jupyter:43709/files/org.apache.hadoop_hadoop-aws-3.3.4.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO Utils: Copying /root/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.4.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.hadoop_hadoop-aws-3.3.4.jar
+26/11/19 21:14:13 INFO SparkContext: Added file file:///root/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.262.jar at spark://jupyter:43709/files/com.amazonaws_aws-java-sdk-bundle-1.12.262.jar with timestamp 1795122853002
+26/11/19 21:14:13 INFO Utils: Copying /root/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.262.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/com.amazonaws_aws-java-sdk-bundle-1.12.262.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.3.jar at spark://jupyter:43709/files/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.3.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.3.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.3.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/io.delta_delta-spark_2.12-3.2.1.jar at spark://jupyter:43709/files/io.delta_delta-spark_2.12-3.2.1.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/io.delta_delta-spark_2.12-3.2.1.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/io.delta_delta-spark_2.12-3.2.1.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/graphframes_graphframes-0.8.3-spark3.5-s_2.12.jar at spark://jupyter:43709/files/graphframes_graphframes-0.8.3-spark3.5-s_2.12.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/graphframes_graphframes-0.8.3-spark3.5-s_2.12.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/graphframes_graphframes-0.8.3-spark3.5-s_2.12.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar at spark://jupyter:43709/files/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.wildfly.openssl_wildfly-openssl-1.0.7.Final.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.3.jar at spark://jupyter:43709/files/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.3.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.3.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.3.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at spark://jupyter:43709/files/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.kafka_kafka-clients-3.4.1.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://jupyter:43709/files/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/com.google.code.findbugs_jsr305-3.0.0.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://jupyter:43709/files/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.commons_commons-pool2-2.11.1.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at spark://jupyter:43709/files/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://jupyter:43709/files/org.lz4_lz4-java-1.8.0.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.lz4_lz4-java-1.8.0.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.5.jar at spark://jupyter:43709/files/org.xerial.snappy_snappy-java-1.1.10.5.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.5.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.xerial.snappy_snappy-java-1.1.10.5.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at spark://jupyter:43709/files/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.slf4j_slf4j-api-2.0.7.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at spark://jupyter:43709/files/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://jupyter:43709/files/commons-logging_commons-logging-1.1.3.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/commons-logging_commons-logging-1.1.3.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/io.delta_delta-storage-3.2.1.jar at spark://jupyter:43709/files/io.delta_delta-storage-3.2.1.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/io.delta_delta-storage-3.2.1.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/io.delta_delta-storage-3.2.1.jar
+26/11/19 21:14:14 INFO SparkContext: Added file file:///root/.ivy2/jars/org.antlr_antlr4-runtime-4.9.3.jar at spark://jupyter:43709/files/org.antlr_antlr4-runtime-4.9.3.jar with timestamp 1795122853002
+26/11/19 21:14:14 INFO Utils: Copying /root/.ivy2/jars/org.antlr_antlr4-runtime-4.9.3.jar to /tmp/spark-1ddb88d4-17e3-4efe-8a92-eeb5ca012f82/userFiles-17e3d3b9-c6a3-415d-8552-c7e1c5a91548/org.antlr_antlr4-runtime-4.9.3.jar
+26/11/19 21:14:14 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/11/19 21:14:14 INFO TransportClientFactory: Successfully created connection to spark-master/172.24.0.3:7077 after 25 ms (0 ms spent in bootstraps)
+26/11/19 21:14:14 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261119211414-0001
+26/11/19 21:14:14 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261119211414-0001/0 on worker-20261119211129-172.24.0.8-38327 (172.24.0.8:38327) with 1 core(s)
+26/11/19 21:14:14 INFO StandaloneSchedulerBackend: Granted executor ID app-20261119211414-0001/0 on hostPort 172.24.0.8:38327 with 1 core(s), 768.0 MiB RAM
+26/11/19 21:14:14 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32857.
+26/11/19 21:14:14 INFO NettyBlockTransferService: Server created on jupyter 0.0.0.0:32857
+26/11/19 21:14:14 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261119211414-0001/1 on worker-20261119211129-172.24.0.7-36109 (172.24.0.7:36109) with 1 core(s)
+26/11/19 21:14:14 INFO StandaloneSchedulerBackend: Granted executor ID app-20261119211414-0001/1 on hostPort 172.24.0.7:36109 with 1 core(s), 768.0 MiB RAM
+26/11/19 21:14:14 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/11/19 21:14:14 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, jupyter, 32857, None)
+26/11/19 21:14:14 INFO BlockManagerMasterEndpoint: Registering block manager jupyter:32857 with 434.4 MiB RAM, BlockManagerId(driver, jupyter, 32857, None)
+26/11/19 21:14:14 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, jupyter, 32857, None)
+26/11/19 21:14:14 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, jupyter, 32857, None)
+26/11/19 21:14:15 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261119211414-0001/1 is now RUNNING
+26/11/19 21:14:15 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261119211414-0001/0 is now RUNNING
+26/11/19 21:14:15 INFO SingleEventLogFileWriter: Logging events to file:/opt/spark-events/app-20261119211414-0001.inprogress
+26/11/19 21:14:15 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/11/19 21:14:18 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+26/11/19 21:14:25 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/11/19 21:14:26 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/11/19 21:14:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/11/19 21:14:28 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/11/19 21:14:28 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/11/19 21:14:30 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/11/19 21:14:30 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/11/19 21:14:32 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+-------------------------------------------
+Batch: 0
+-------------------------------------------
++----------------------------------------+----+------------+--------+---------+---------+-------+---------+----------+--------------------------+
+|tx_id                                   |type|payer_wallet|payee_id|device_id|city     |channel|status   |amount_mad|event_time                |
++----------------------------------------+----+------------+--------+---------+---------+-------+---------+----------+--------------------------+
+|TX-validation-jalon2-00000001-scenario-2|P2M |W-SHARED-05 |M-002   |D-SHARED |Rabat    |QR     |COMPLETED|5.37      |2026-11-19 20:12:01.225514|
+|TX-validation-jalon2-00000002-scenario-1|P2M |W-SHARED-07 |M-003   |D-SHARED |Marrakech|USSD   |COMPLETED|5.74      |2026-11-19 20:12:01.369514|
+|TX-validation-jalon2-00000002-scenario-2|P2M |W-SHARED-08 |M-003   |D-SHARED |Marrakech|USSD   |COMPLETED|5.74      |2026-11-19 20:12:01.441514|
+|TX-validation-jalon2-00000003-scenario-1|P2P |W-SHARED-10 |W-0034  |D-SHARED |Fes      |APP    |COMPLETED|6.11      |2026-11-19 20:12:01.585514|
+|TX-validation-jalon2-00000004-scenario-1|P2M |W-SHARED-13 |M-005   |D-SHARED |Tanger   |QR     |COMPLETED|6.48      |2026-11-19 20:12:01.801514|
++----------------------------------------+----+------------+--------+---------+---------+-------+---------+----------+--------------------------+
+only showing top 5 rows
+
+26/11/19 21:14:39 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 10000 milliseconds, but spent 14141 milliseconds
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:14:25.748Z", "batchId": 0, "numInputRows": 9998, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 708.1739623176087, "durationMs": {"addBatch": 7991, "commitOffsets": 173, "getBatch": 35, "latestOffset": 5044, "queryPlanning": 238, "triggerExecution": 14116, "walCommit": 573}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": null, "endOffset": {"transactions": {"2": 3324, "1": 3311, "0": 3363}}, "latestOffset": {"transactions": {"2": 16713, "1": 16649, "0": 16907}}, "numInputRows": 9998, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 708.1739623176087, "metrics": {"avgOffsetsBehindLatest": "13423.666666666666", "maxOffsetsBehindLatest": "13544", "minOffsetsBehindLatest": "13338"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 9998}}
+26/11/19 21:14:40 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 10000 milliseconds, but spent 13147 milliseconds
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:14:27.661Z", "batchId": 0, "numInputRows": 9999, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 760.6694560669456, "durationMs": {"addBatch": 8940, "commitOffsets": 430, "getBatch": 143, "latestOffset": 2245, "queryPlanning": 890, "triggerExecution": 13145, "walCommit": 426}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": null, "endOffset": {"transactions": {"2": 3324, "1": 3312, "0": 3363}}, "latestOffset": {"transactions": {"2": 16704, "1": 16644, "0": 16901}}, "numInputRows": 9999, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 760.6694560669456, "metrics": {"avgOffsetsBehindLatest": "13416.666666666666", "maxOffsetsBehindLatest": "13538", "minOffsetsBehindLatest": "13332"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+-------------------------------------------
+Batch: 0
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED|  526|
+|Casablanca|  REVERSED|   51|
+|    Tanger|  REVERSED|   49|
+|Casablanca|  REJECTED|   95|
+|    Agadir|  REJECTED|   90|
+|       Fes|  REJECTED|   94|
+|       Fes| COMPLETED|  484|
+|     Rabat|AUTHORIZED|  523|
+|Casablanca| INITIATED|  512|
+|    Tanger| COMPLETED|  473|
+| Marrakech|  REJECTED|   99|
+|    Tanger| INITIATED|  517|
+|    Tanger|AUTHORIZED|  525|
+|    Agadir| INITIATED|  523|
+| Marrakech|  REVERSED|   52|
+|     Rabat|  REVERSED|   49|
+|    Agadir|  REVERSED|   48|
+|    Agadir|AUTHORIZED|  530|
+|       Fes|  REVERSED|   47|
+|     Rabat|  REJECTED|   97|
+| Marrakech| INITIATED|  516|
+|     Rabat| INITIATED|  531|
+|    Tanger|  REJECTED|   90|
+| Marrakech|AUTHORIZED|  525|
+|    Agadir| COMPLETED|  482|
+|     Rabat| COMPLETED|  476|
+|Casablanca| COMPLETED|  467|
+|       Fes|AUTHORIZED|  517|
+|Casablanca|AUTHORIZED|  530|
+| Marrakech| COMPLETED|  480|
++----------+----------+-----+
+
+26/11/19 21:14:42 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 10000 milliseconds, but spent 12312 milliseconds
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:14:30.311Z", "batchId": 0, "numInputRows": 9998, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 812.2511983101796, "durationMs": {"addBatch": 9937, "commitOffsets": 112, "getBatch": 214, "latestOffset": 711, "queryPlanning": 608, "triggerExecution": 12309, "walCommit": 661}, "eventTime": {"avg": "2026-11-19T20:17:38.071Z", "max": "2026-11-19T20:24:15.481Z", "min": "2026-11-19T19:57:47.337Z", "watermark": "1970-01-01T00:00:00.000Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 30, "allUpdatesTimeMs": 125, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 225, "memoryUsedBytes": 6960, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 0, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6672}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": null, "endOffset": {"transactions": {"2": 3325, "1": 3311, "0": 3362}}, "latestOffset": {"transactions": {"2": 16717, "1": 16650, "0": 16907}}, "numInputRows": 9998, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 812.2511983101796, "metrics": {"avgOffsetsBehindLatest": "13425.333333333334", "maxOffsetsBehindLatest": "13545", "minOffsetsBehindLatest": "13339"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+-------------------------------------------
+Batch: 0
+-------------------------------------------
++------+----+-----+
+|window|city|count|
++------+----+-----+
++------+----+-----+
+
+-------------------------------------------
+Batch: 1
+-------------------------------------------
+26/11/19 21:14:43 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 10000 milliseconds, but spent 11060 milliseconds
++-----------------------------+----+------------+--------+---------+----------+-------+----------+----------+--------------------------+
+|tx_id                        |type|payer_wallet|payee_id|device_id|city      |channel|status    |amount_mad|event_time                |
++-----------------------------+----+------------+--------+---------+----------+-------+----------+----------+--------------------------+
+|TX-validation-jalon2-00003401|P2M |W-0401      |M-102   |D-0401   |Agadir    |USSD   |COMPLETED |1263.37   |2026-11-19 20:24:15.625514|
+|TX-validation-jalon2-00003402|P2P |W-0402      |W-0827  |D-0402   |Casablanca|APP    |INITIATED |1263.74   |2026-11-19 20:24:15.697514|
+|TX-validation-jalon2-00003402|P2P |W-0402      |W-0827  |D-0402   |Casablanca|APP    |AUTHORIZED|1263.74   |2026-11-19 20:24:15.769514|
+|TX-validation-jalon2-00003402|P2P |W-0402      |W-0827  |D-0402   |Casablanca|APP    |COMPLETED |1263.74   |2026-11-19 20:24:15.841514|
+|TX-validation-jalon2-00003404|P2M |W-0404      |M-105   |D-0404   |Marrakech |USSD   |INITIATED |1264.48   |2026-11-19 20:24:16.129514|
++-----------------------------+----+------------+--------+---------+----------+-------+----------+----------+--------------------------+
+only showing top 5 rows
+
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:14:39.890Z", "batchId": 1, "numInputRows": 9998, "inputRowsPerSecond": 706.97213972564, "processedRowsPerSecond": 2661.874334398296, "durationMs": {"addBatch": 3468, "commitOffsets": 89, "getBatch": 1, "latestOffset": 11, "queryPlanning": 23, "triggerExecution": 3756, "walCommit": 160}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 3324, "1": 3311, "0": 3363}}, "endOffset": {"transactions": {"2": 6644, "1": 6630, "0": 6722}}, "latestOffset": {"transactions": {"2": 16757, "1": 16741, "0": 16952}}, "numInputRows": 9998, "inputRowsPerSecond": 706.97213972564, "processedRowsPerSecond": 2661.874334398296, "metrics": {"avgOffsetsBehindLatest": "10151.333333333334", "maxOffsetsBehindLatest": "10230", "minOffsetsBehindLatest": "10111"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 9998}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:14:32.423Z", "batchId": 0, "numInputRows": 9998, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 904.060041595081, "durationMs": {"addBatch": 9009, "commitOffsets": 124, "getBatch": 32, "latestOffset": 891, "queryPlanning": 90, "triggerExecution": 11059, "walCommit": 804}, "eventTime": {"avg": "2026-11-19T20:17:38.072Z", "max": "2026-11-19T20:24:15.481Z", "min": "2026-11-19T19:57:47.337Z", "watermark": "1970-01-01T00:00:00.000Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 23, "numRowsUpdated": 23, "allUpdatesTimeMs": 84, "numRowsRemoved": 0, "allRemovalsTimeMs": 33, "commitTimeMs": 173, "memoryUsedBytes": 5736, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 0, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 5448}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": null, "endOffset": {"transactions": {"2": 3324, "1": 3312, "0": 3362}}, "latestOffset": {"transactions": {"2": 16729, "1": 16671, "0": 16920}}, "numInputRows": 9998, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 904.060041595081, "metrics": {"avgOffsetsBehindLatest": "13440.666666666666", "maxOffsetsBehindLatest": "13558", "minOffsetsBehindLatest": "13359"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 0}}
+-------------------------------------------
+Batch: 1
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED| 1057|
+|Casablanca|  REVERSED|   97|
+|    Tanger|  REVERSED|  100|
+|Casablanca|  REJECTED|  189|
+|       Fes|  REJECTED|  188|
+|     Rabat|AUTHORIZED| 1049|
+|    Tanger| COMPLETED|  954|
+| Marrakech|  REJECTED|  192|
+|    Tanger| INITIATED| 1040|
+|    Agadir| INITIATED| 1045|
+| Marrakech|  REVERSED|   99|
+|     Rabat|  REVERSED|   95|
+|    Agadir|  REJECTED|  183|
+|       Fes| COMPLETED|  951|
+|Casablanca| INITIATED| 1047|
+|    Tanger|AUTHORIZED| 1046|
+|    Agadir|AUTHORIZED| 1065|
+|       Fes|  REVERSED|   96|
+| Marrakech| INITIATED| 1036|
+|     Rabat| INITIATED| 1065|
+|    Agadir| COMPLETED|  947|
+|     Rabat| COMPLETED|  943|
+|Casablanca| COMPLETED|  947|
+|       Fes|AUTHORIZED| 1028|
+|Casablanca|AUTHORIZED| 1051|
+| Marrakech| COMPLETED|  959|
+|    Agadir|  REVERSED|  100|
+|     Rabat|  REJECTED|  202|
+|    Tanger|  REJECTED|  184|
+| Marrakech|AUTHORIZED| 1041|
++----------+----------+-----+
+
+-------------------------------------------
+Batch: 1
+-------------------------------------------
++--------------------+----------+-----+
+|              window|      city|count|
++--------------------+----------+-----+
+|{2026-11-19 19:50...|Casablanca|    5|
+|{2026-11-19 20:00...|     Rabat|   41|
+|{2026-11-19 20:00...|    Tanger|   34|
+|{2026-11-19 19:50...|    Agadir|    1|
+|{2026-11-19 20:00...|    Agadir|   32|
+|{2026-11-19 19:50...|       Fes|    1|
+|{2026-11-19 20:00...|       Fes|   34|
+|{2026-11-19 20:00...| Marrakech|   36|
+|{2026-11-19 19:50...| Marrakech|    5|
+|{2026-11-19 19:50...|    Tanger|    3|
+|{2026-11-19 20:00...|Casablanca|   42|
++--------------------+----------+-----+
+
+-------------------------------------------
+Batch: 2
+-------------------------------------------
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+|tx_id                        |type|payer_wallet|payee_id|device_id|city     |channel|status    |amount_mad|event_time                |
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+|TX-validation-jalon2-00006765|P2P |W-0765      |W-0368  |D-0765   |Fes      |APP    |INITIATED |2508.05   |2026-11-19 20:36:22.105514|
+|TX-validation-jalon2-00006765|P2P |W-0765      |W-0368  |D-0765   |Fes      |APP    |AUTHORIZED|2508.05   |2026-11-19 20:36:22.177514|
+|TX-validation-jalon2-00006765|P2P |W-0765      |W-0368  |D-0765   |Fes      |APP    |REVERSED  |2508.05   |2026-11-19 20:36:22.249514|
+|TX-validation-jalon2-00006770|P2M |W-0770      |M-171   |D-0770   |Marrakech|USSD   |INITIATED |2509.9    |2026-11-19 20:36:23.185514|
+|TX-validation-jalon2-00006770|P2M |W-0770      |M-171   |D-0770   |Marrakech|USSD   |AUTHORIZED|2509.9    |2026-11-19 20:36:23.257514|
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+only showing top 5 rows
+
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:14:40.808Z", "batchId": 1, "numInputRows": 9999, "inputRowsPerSecond": 760.5537384954742, "processedRowsPerSecond": 3221.3273195876286, "durationMs": {"addBatch": 2862, "commitOffsets": 92, "getBatch": 0, "latestOffset": 9, "queryPlanning": 13, "triggerExecution": 3104, "walCommit": 123}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 3324, "1": 3312, "0": 3363}}, "endOffset": {"transactions": {"2": 6644, "1": 6632, "0": 6722}}, "latestOffset": {"transactions": {"2": 16760, "1": 16750, "0": 16958}}, "numInputRows": 9999, "inputRowsPerSecond": 760.5537384954742, "processedRowsPerSecond": 3221.3273195876286, "metrics": {"avgOffsetsBehindLatest": "10156.666666666666", "maxOffsetsBehindLatest": "10236", "minOffsetsBehindLatest": "10116"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:14:42.624Z", "batchId": 1, "numInputRows": 9998, "inputRowsPerSecond": 811.9873304637375, "processedRowsPerSecond": 5375.268817204301, "durationMs": {"addBatch": 1617, "commitOffsets": 82, "getBatch": 0, "latestOffset": 8, "queryPlanning": 37, "triggerExecution": 1860, "walCommit": 109}, "eventTime": {"avg": "2026-11-19T20:29:39.417Z", "max": "2026-11-19T20:36:21.889Z", "min": "2026-11-19T20:09:35.777Z", "watermark": "2026-11-19T20:14:15.481Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 30, "allUpdatesTimeMs": 58, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 155, "memoryUsedBytes": 10944, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 4, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 3325, "1": 3311, "0": 3362}}, "endOffset": {"transactions": {"2": 6647, "1": 6629, "0": 6720}}, "latestOffset": {"transactions": {"2": 16785, "1": 16753, "0": 16967}}, "numInputRows": 9998, "inputRowsPerSecond": 811.9873304637375, "processedRowsPerSecond": 5375.268817204301, "metrics": {"avgOffsetsBehindLatest": "10169.666666666666", "maxOffsetsBehindLatest": "10247", "minOffsetsBehindLatest": "10124"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:14:43.484Z", "batchId": 1, "numInputRows": 9999, "inputRowsPerSecond": 903.9869812855981, "processedRowsPerSecond": 7775.272161741835, "durationMs": {"addBatch": 1061, "commitOffsets": 71, "getBatch": 0, "latestOffset": 7, "queryPlanning": 38, "triggerExecution": 1286, "walCommit": 107}, "eventTime": {"avg": "2026-11-19T20:29:39.456Z", "max": "2026-11-19T20:36:21.889Z", "min": "2026-11-19T20:09:35.777Z", "watermark": "2026-11-19T20:14:15.481Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 18, "numRowsUpdated": 21, "allUpdatesTimeMs": 37, "numRowsRemoved": 11, "allRemovalsTimeMs": 15, "commitTimeMs": 117, "memoryUsedBytes": 9032, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 4, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 4544}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 3324, "1": 3312, "0": 3362}}, "endOffset": {"transactions": {"2": 6648, "1": 6629, "0": 6720}}, "latestOffset": {"transactions": {"2": 16796, "1": 16756, "0": 16970}}, "numInputRows": 9999, "inputRowsPerSecond": 903.9869812855981, "processedRowsPerSecond": 7775.272161741835, "metrics": {"avgOffsetsBehindLatest": "10175.0", "maxOffsetsBehindLatest": "10250", "minOffsetsBehindLatest": "10127"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 11}}
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:14:43.647Z", "batchId": 2, "numInputRows": 9998, "inputRowsPerSecond": 2661.1658237955817, "processedRowsPerSecond": 7810.9375, "durationMs": {"addBatch": 1079, "commitOffsets": 77, "getBatch": 1, "latestOffset": 8, "queryPlanning": 17, "triggerExecution": 1280, "walCommit": 97}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 6644, "1": 6630, "0": 6722}}, "endOffset": {"transactions": {"2": 9969, "1": 9946, "0": 10079}}, "latestOffset": {"transactions": {"2": 16796, "1": 16756, "0": 16973}}, "numInputRows": 9998, "inputRowsPerSecond": 2661.1658237955817, "processedRowsPerSecond": 7810.9375, "metrics": {"avgOffsetsBehindLatest": "6843.666666666667", "maxOffsetsBehindLatest": "6894", "minOffsetsBehindLatest": "6810"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 9998}}
+-------------------------------------------
+Batch: 3
+-------------------------------------------
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+|tx_id                        |type|payer_wallet|payee_id|device_id|city     |channel|status    |amount_mad|event_time                |
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+|TX-validation-jalon2-00009964|P2M |W-0964      |M-065   |D-0964   |Tanger   |QR     |AUTHORIZED|3691.68   |2026-11-19 20:47:53.161514|
+|TX-validation-jalon2-00009964|P2M |W-0964      |M-065   |D-0964   |Tanger   |QR     |COMPLETED |3691.68   |2026-11-19 20:47:53.233514|
+|TX-validation-jalon2-00009968|P2M |W-0968      |M-069   |D-0968   |Marrakech|USSD   |INITIATED |3693.16   |2026-11-19 20:47:53.953514|
+|TX-validation-jalon2-00009968|P2M |W-0968      |M-069   |D-0968   |Marrakech|USSD   |AUTHORIZED|3693.16   |2026-11-19 20:47:54.025514|
+|TX-validation-jalon2-00009968|P2M |W-0968      |M-069   |D-0968   |Marrakech|USSD   |COMPLETED |3693.16   |2026-11-19 20:47:54.097514|
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+only showing top 5 rows
+
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:14:50.000Z", "batchId": 3, "numInputRows": 9999, "inputRowsPerSecond": 1573.9020934991343, "processedRowsPerSecond": 9717.20116618076, "durationMs": {"addBatch": 744, "commitOffsets": 150, "getBatch": 0, "latestOffset": 6, "queryPlanning": 10, "triggerExecution": 1029, "walCommit": 118}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 9969, "1": 9946, "0": 10079}}, "endOffset": {"transactions": {"2": 13294, "1": 13258, "0": 13441}}, "latestOffset": {"transactions": {"2": 16838, "1": 16789, "0": 17025}}, "numInputRows": 9999, "inputRowsPerSecond": 1573.9020934991343, "processedRowsPerSecond": 9717.20116618076, "metrics": {"avgOffsetsBehindLatest": "3553.0", "maxOffsetsBehindLatest": "3584", "minOffsetsBehindLatest": "3531"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 9999}}
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:14:50.000Z", "batchId": 2, "numInputRows": 9999, "inputRowsPerSecond": 1087.793733681462, "processedRowsPerSecond": 15574.766355140187, "durationMs": {"addBatch": 408, "commitOffsets": 152, "getBatch": 1, "latestOffset": 5, "queryPlanning": 7, "triggerExecution": 642, "walCommit": 68}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 6644, "1": 6632, "0": 6722}}, "endOffset": {"transactions": {"2": 9969, "1": 9945, "0": 10083}}, "latestOffset": {"transactions": {"2": 16838, "1": 16789, "0": 17025}}, "numInputRows": 9999, "inputRowsPerSecond": 1087.793733681462, "processedRowsPerSecond": 15574.766355140187, "metrics": {"avgOffsetsBehindLatest": "6885.0", "maxOffsetsBehindLatest": "6942", "minOffsetsBehindLatest": "6844"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+-------------------------------------------
+Batch: 2
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED| 1580|
+|Casablanca|  REVERSED|  148|
+|    Tanger|  REVERSED|  151|
+|Casablanca|  REJECTED|  283|
+|       Fes|  REJECTED|  278|
+|     Rabat|AUTHORIZED| 1579|
+|    Tanger| COMPLETED| 1425|
+| Marrakech|  REJECTED|  288|
+|    Tanger| INITIATED| 1567|
+|    Agadir| INITIATED| 1570|
+| Marrakech|  REVERSED|  150|
+|     Rabat|  REVERSED|  147|
+|    Agadir|  REJECTED|  276|
+|       Fes| COMPLETED| 1432|
+|Casablanca| INITIATED| 1560|
+|    Tanger|AUTHORIZED| 1575|
+|    Agadir|AUTHORIZED| 1596|
+|       Fes|  REVERSED|  145|
+| Marrakech| INITIATED| 1561|
+|     Rabat| INITIATED| 1594|
+|    Agadir| COMPLETED| 1414|
+|     Rabat| COMPLETED| 1398|
+|Casablanca| COMPLETED| 1410|
+|       Fes|AUTHORIZED| 1567|
+|Casablanca|AUTHORIZED| 1578|
+| Marrakech| COMPLETED| 1424|
+|    Agadir|  REVERSED|  148|
+|     Rabat|  REJECTED|  299|
+|    Tanger|  REJECTED|  278|
+| Marrakech|AUTHORIZED| 1574|
++----------+----------+-----+
+
+-------------------------------------------
+Batch: 2
+-------------------------------------------
++--------------------+----------+-----+
+|              window|      city|count|
++--------------------+----------+-----+
+|{2026-11-19 20:10...| Marrakech| 1110|
+|{2026-11-19 20:10...|    Tanger| 1120|
+|{2026-11-19 20:10...|Casablanca| 1100|
+|{2026-11-19 20:10...|       Fes| 1125|
+|{2026-11-19 20:10...|    Agadir| 1145|
+|{2026-11-19 20:10...|     Rabat| 1131|
++--------------------+----------+-----+
+
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:14:50.000Z", "batchId": 2, "numInputRows": 9999, "inputRowsPerSecond": 1355.612798264642, "processedRowsPerSecond": 6526.762402088772, "durationMs": {"addBatch": 1315, "commitOffsets": 115, "getBatch": 0, "latestOffset": 6, "queryPlanning": 24, "triggerExecution": 1532, "walCommit": 70}, "eventTime": {"avg": "2026-11-19T20:41:36.888Z", "max": "2026-11-19T20:48:20.377Z", "min": "2026-11-19T20:20:49.721Z", "watermark": "2026-11-19T20:26:21.889Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 30, "allUpdatesTimeMs": 73, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 187, "memoryUsedBytes": 11200, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 8, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 6647, "1": 6629, "0": 6720}}, "endOffset": {"transactions": {"2": 9971, "1": 9943, "0": 10081}}, "latestOffset": {"transactions": {"2": 16838, "1": 16789, "0": 17025}}, "numInputRows": 9999, "inputRowsPerSecond": 1355.612798264642, "processedRowsPerSecond": 6526.762402088772, "metrics": {"avgOffsetsBehindLatest": "6885.666666666667", "maxOffsetsBehindLatest": "6944", "minOffsetsBehindLatest": "6846"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:14:50.000Z", "batchId": 2, "numInputRows": 9999, "inputRowsPerSecond": 1534.5303867403316, "processedRowsPerSecond": 5515.168229453944, "durationMs": {"addBatch": 1626, "commitOffsets": 79, "getBatch": 0, "latestOffset": 6, "queryPlanning": 31, "triggerExecution": 1813, "walCommit": 70}, "eventTime": {"avg": "2026-11-19T20:41:36.960Z", "max": "2026-11-19T20:48:20.449Z", "min": "2026-11-19T20:20:49.721Z", "watermark": "2026-11-19T20:26:21.889Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 18, "numRowsUpdated": 18, "allUpdatesTimeMs": 60, "numRowsRemoved": 6, "allRemovalsTimeMs": 18, "commitTimeMs": 163, "memoryUsedBytes": 8000, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 8, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 4416}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 6648, "1": 6629, "0": 6720}}, "endOffset": {"transactions": {"2": 9972, "1": 9943, "0": 10081}}, "latestOffset": {"transactions": {"2": 16838, "1": 16789, "0": 17025}}, "numInputRows": 9999, "inputRowsPerSecond": 1534.5303867403316, "processedRowsPerSecond": 5515.168229453944, "metrics": {"avgOffsetsBehindLatest": "6885.333333333333", "maxOffsetsBehindLatest": "6944", "minOffsetsBehindLatest": "6846"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 6}}
+-------------------------------------------
+Batch: 4
+-------------------------------------------
++-----------------------------+----+------------+--------+---------+------+-------+----------+----------+--------------------------+
+|tx_id                        |type|payer_wallet|payee_id|device_id|city  |channel|status    |amount_mad|event_time                |
++-----------------------------+----+------------+--------+---------+------+-------+----------+----------+--------------------------+
+|TX-validation-jalon2-00013125|P2P |W-0125      |W-0888  |D-0125   |Fes   |APP    |INITIATED |4861.25   |2026-11-19 20:59:15.865514|
+|TX-validation-jalon2-00013125|P2P |W-0125      |W-0888  |D-0125   |Fes   |APP    |AUTHORIZED|4861.25   |2026-11-19 20:59:15.937514|
+|TX-validation-jalon2-00013125|P2P |W-0125      |W-0888  |D-0125   |Fes   |APP    |REJECTED  |4861.25   |2026-11-19 20:59:16.009514|
+|TX-validation-jalon2-00013126|P2M |W-0126      |M-227   |D-0126   |Tanger|QR     |INITIATED |4861.62   |2026-11-19 20:46:50.081514|
+|TX-validation-jalon2-00013126|P2M |W-0126      |M-227   |D-0126   |Tanger|QR     |AUTHORIZED|4861.62   |2026-11-19 20:59:16.153514|
++-----------------------------+----+------------+--------+---------+------+-------+----------+----------+--------------------------+
+only showing top 5 rows
+
+-------------------------------------------
+Batch: 3
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED| 2095|
+|Casablanca|  REVERSED|  192|
+|    Tanger|  REVERSED|  200|
+|Casablanca|  REJECTED|  377|
+|       Fes|  REJECTED|  373|
+|     Rabat|AUTHORIZED| 2108|
+|    Tanger| COMPLETED| 1884|
+| Marrakech|  REJECTED|  387|
+|    Tanger| INITIATED| 2083|
+|    Agadir| INITIATED| 2100|
+| Marrakech|  REVERSED|  200|
+|     Rabat|  REVERSED|  191|
+|    Agadir|  REJECTED|  378|
+|       Fes| COMPLETED| 1898|
+|Casablanca| INITIATED| 2076|
+|    Tanger|AUTHORIZED| 2093|
+|    Agadir|AUTHORIZED| 2121|
+|       Fes|  REVERSED|  196|
+| Marrakech| INITIATED| 2098|
+|     Rabat| INITIATED| 2123|
+|    Agadir| COMPLETED| 1892|
+|     Rabat| COMPLETED| 1883|
+|Casablanca| COMPLETED| 1889|
+|       Fes|AUTHORIZED| 2089|
+|Casablanca|AUTHORIZED| 2108|
+| Marrakech| COMPLETED| 1900|
+|    Agadir|  REVERSED|  195|
+|     Rabat|  REJECTED|  397|
+|    Tanger|  REJECTED|  374|
+| Marrakech|AUTHORIZED| 2093|
++----------+----------+-----+
+
+-------------------------------------------
+Batch: 3
+-------------------------------------------
++--------------------+----------+-----+
+|              window|      city|count|
++--------------------+----------+-----+
+|{2026-11-19 20:20...|    Agadir| 1384|
+|{2026-11-19 20:20...| Marrakech| 1396|
+|{2026-11-19 20:20...|       Fes| 1385|
+|{2026-11-19 20:20...|Casablanca| 1400|
+|{2026-11-19 20:20...|     Rabat| 1386|
+|{2026-11-19 20:20...|    Tanger| 1393|
++--------------------+----------+-----+
+
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:15:00.001Z", "batchId": 4, "numInputRows": 9998, "inputRowsPerSecond": 999.7000299970003, "processedRowsPerSecond": 11096.559378468368, "durationMs": {"addBatch": 692, "commitOffsets": 107, "getBatch": 0, "latestOffset": 10, "queryPlanning": 6, "triggerExecution": 901, "walCommit": 86}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 13294, "1": 13258, "0": 13441}}, "endOffset": {"transactions": {"2": 16623, "1": 16569, "0": 16799}}, "latestOffset": {"transactions": {"2": 16910, "1": 16854, "0": 17088}}, "numInputRows": 9998, "inputRowsPerSecond": 999.7000299970003, "processedRowsPerSecond": 11096.559378468368, "metrics": {"avgOffsetsBehindLatest": "287.0", "maxOffsetsBehindLatest": "289", "minOffsetsBehindLatest": "285"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 9998}}
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:15:00.000Z", "batchId": 3, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 14746.312684365781, "durationMs": {"addBatch": 481, "commitOffsets": 104, "getBatch": 0, "latestOffset": 10, "queryPlanning": 6, "triggerExecution": 678, "walCommit": 77}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 9969, "1": 9945, "0": 10083}}, "endOffset": {"transactions": {"2": 13297, "1": 13257, "0": 13441}}, "latestOffset": {"transactions": {"2": 16910, "1": 16854, "0": 17088}}, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 14746.312684365781, "metrics": {"avgOffsetsBehindLatest": "3619.0", "maxOffsetsBehindLatest": "3647", "minOffsetsBehindLatest": "3597"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:15:00.000Z", "batchId": 3, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 9031.616982836495, "durationMs": {"addBatch": 912, "commitOffsets": 92, "getBatch": 0, "latestOffset": 10, "queryPlanning": 14, "triggerExecution": 1107, "walCommit": 78}, "eventTime": {"avg": "2026-11-19T20:53:37.783Z", "max": "2026-11-19T21:00:33.121Z", "min": "2026-11-19T20:33:21.809Z", "watermark": "2026-11-19T20:38:20.377Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 30, "allUpdatesTimeMs": 49, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 152, "memoryUsedBytes": 11200, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 12, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 9971, "1": 9943, "0": 10081}}, "endOffset": {"transactions": {"2": 13297, "1": 13256, "0": 13440}}, "latestOffset": {"transactions": {"2": 16910, "1": 16854, "0": 17088}}, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 9031.616982836495, "metrics": {"avgOffsetsBehindLatest": "3619.6666666666665", "maxOffsetsBehindLatest": "3648", "minOffsetsBehindLatest": "3598"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:15:00.000Z", "batchId": 3, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 7726.429675425038, "durationMs": {"addBatch": 1109, "commitOffsets": 65, "getBatch": 0, "latestOffset": 10, "queryPlanning": 21, "triggerExecution": 1294, "walCommit": 86}, "eventTime": {"avg": "2026-11-19T20:53:37.856Z", "max": "2026-11-19T21:00:33.841Z", "min": "2026-11-19T20:33:21.809Z", "watermark": "2026-11-19T20:38:20.449Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 24, "numRowsUpdated": 24, "allUpdatesTimeMs": 38, "numRowsRemoved": 6, "allRemovalsTimeMs": 10, "commitTimeMs": 128, "memoryUsedBytes": 9312, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 12, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 5856}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 9972, "1": 9943, "0": 10081}}, "endOffset": {"transactions": {"2": 13298, "1": 13256, "0": 13440}}, "latestOffset": {"transactions": {"2": 16910, "1": 16854, "0": 17088}}, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 7726.429675425038, "metrics": {"avgOffsetsBehindLatest": "3619.3333333333335", "maxOffsetsBehindLatest": "3648", "minOffsetsBehindLatest": "3598"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 6}}
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:15:10.000Z", "batchId": 4, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 13771.349862258954, "durationMs": {"addBatch": 569, "commitOffsets": 73, "getBatch": 0, "latestOffset": 14, "queryPlanning": 5, "triggerExecution": 725, "walCommit": 62}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 13297, "1": 13257, "0": 13441}}, "endOffset": {"transactions": {"2": 16618, "1": 16575, "0": 16800}}, "latestOffset": {"transactions": {"2": 16970, "1": 16926, "0": 17156}}, "numInputRows": 9998, "inputRowsPerSecond": 999.8, "processedRowsPerSecond": 13771.349862258954, "metrics": {"avgOffsetsBehindLatest": "353.0", "maxOffsetsBehindLatest": "356", "minOffsetsBehindLatest": "351"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+-------------------------------------------
+Batch: 5
+-------------------------------------------
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+|tx_id                        |type|payer_wallet|payee_id|device_id|city     |channel|status    |amount_mad|event_time                |
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+|TX-validation-jalon2-00016645|P2M |W-0645      |M-146   |D-0645   |Rabat    |QR     |AUTHORIZED|1163.65   |2026-11-19 21:11:56.257514|
+|TX-validation-jalon2-00016645|P2M |W-0645      |M-146   |D-0645   |Rabat    |QR     |REJECTED  |1163.65   |2026-11-19 21:11:56.329514|
+|TX-validation-jalon2-00016646|P2M |W-0646      |M-147   |D-0646   |Marrakech|USSD   |INITIATED |1164.02   |2026-11-19 21:11:56.401514|
+|TX-validation-jalon2-00016646|P2M |W-0646      |M-147   |D-0646   |Marrakech|USSD   |AUTHORIZED|1164.02   |2026-11-19 21:11:56.473514|
+|TX-validation-jalon2-00016646|P2M |W-0646      |M-147   |D-0646   |Marrakech|USSD   |COMPLETED |1164.02   |2026-11-19 21:11:56.545514|
++-----------------------------+----+------------+--------+---------+---------+-------+----------+----------+--------------------------+
+only showing top 5 rows
+
+-------------------------------------------
+Batch: 4
+-------------------------------------------
++--------------------+----------+-----+
+|              window|      city|count|
++--------------------+----------+-----+
+|{2026-11-19 20:40...|     Rabat| 1376|
+|{2026-11-19 20:40...|       Fes| 1388|
+|{2026-11-19 20:30...| Marrakech| 1375|
+|{2026-11-19 20:40...| Marrakech| 1402|
+|{2026-11-19 20:30...|Casablanca| 1400|
+|{2026-11-19 20:40...|Casablanca| 1375|
+|{2026-11-19 20:30...|    Tanger| 1385|
+|{2026-11-19 20:30...|     Rabat| 1409|
+|{2026-11-19 20:30...|    Agadir| 1363|
+|{2026-11-19 20:30...|       Fes| 1402|
+|{2026-11-19 20:40...|    Agadir| 1409|
+|{2026-11-19 20:40...|    Tanger| 1404|
++--------------------+----------+-----+
+
+-------------------------------------------
+Batch: 4
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED| 2628|
+|Casablanca|  REVERSED|  247|
+|    Tanger|  REVERSED|  248|
+|Casablanca|  REJECTED|  473|
+|       Fes|  REJECTED|  476|
+|     Rabat|AUTHORIZED| 2626|
+|    Tanger| COMPLETED| 2367|
+| Marrakech|  REJECTED|  478|
+|    Tanger| INITIATED| 2623|
+|    Agadir| INITIATED| 2632|
+| Marrakech|  REVERSED|  246|
+|     Rabat|  REVERSED|  241|
+|    Agadir|  REJECTED|  473|
+|       Fes| COMPLETED| 2362|
+|Casablanca| INITIATED| 2600|
+|    Tanger|AUTHORIZED| 2625|
+|    Agadir|AUTHORIZED| 2643|
+|       Fes|  REVERSED|  241|
+| Marrakech| INITIATED| 2615|
+|     Rabat| INITIATED| 2649|
+|    Agadir| COMPLETED| 2363|
+|     Rabat| COMPLETED| 2342|
+|Casablanca| COMPLETED| 2353|
+|       Fes|AUTHORIZED| 2613|
+|Casablanca|AUTHORIZED| 2637|
+| Marrakech| COMPLETED| 2372|
+|    Agadir|  REVERSED|  243|
+|     Rabat|  REJECTED|  490|
+|    Tanger|  REJECTED|  468|
+| Marrakech|AUTHORIZED| 2618|
++----------+----------+-----+
+
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:15:10.003Z", "batchId": 5, "numInputRows": 1061, "inputRowsPerSecond": 106.07878424315136, "processedRowsPerSecond": 954.995499549955, "durationMs": {"addBatch": 915, "commitOffsets": 55, "getBatch": 0, "latestOffset": 13, "queryPlanning": 11, "triggerExecution": 1111, "walCommit": 116}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 16623, "1": 16569, "0": 16799}}, "endOffset": {"transactions": {"2": 16970, "1": 16926, "0": 17156}}, "latestOffset": {"transactions": {"2": 16970, "1": 16926, "0": 17156}}, "numInputRows": 1061, "inputRowsPerSecond": 106.07878424315136, "processedRowsPerSecond": 954.995499549955, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 1061}}
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:15:10.001Z", "batchId": 4, "numInputRows": 9999, "inputRowsPerSecond": 999.8000199980003, "processedRowsPerSecond": 6049.001814882033, "durationMs": {"addBatch": 1443, "commitOffsets": 61, "getBatch": 0, "latestOffset": 13, "queryPlanning": 21, "triggerExecution": 1652, "walCommit": 111}, "eventTime": {"avg": "2026-11-19T21:05:37.131Z", "max": "2026-11-19T21:14:20.927Z", "min": "2026-11-19T20:44:33.209Z", "watermark": "2026-11-19T20:50:33.121Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 30, "allUpdatesTimeMs": 40, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 103, "memoryUsedBytes": 11200, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 16, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 13297, "1": 13256, "0": 13440}}, "endOffset": {"transactions": {"2": 16618, "1": 16574, "0": 16800}}, "latestOffset": {"transactions": {"2": 16970, "1": 16926, "0": 17156}}, "numInputRows": 9999, "inputRowsPerSecond": 999.8000199980003, "processedRowsPerSecond": 6049.001814882033, "metrics": {"avgOffsetsBehindLatest": "353.3333333333333", "maxOffsetsBehindLatest": "356", "minOffsetsBehindLatest": "352"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:15:10.001Z", "batchId": 4, "numInputRows": 9998, "inputRowsPerSecond": 999.7000299970003, "processedRowsPerSecond": 6986.722571628232, "durationMs": {"addBatch": 1281, "commitOffsets": 53, "getBatch": 0, "latestOffset": 13, "queryPlanning": 20, "triggerExecution": 1431, "walCommit": 61}, "eventTime": {"avg": "2026-11-19T21:05:37.161Z", "max": "2026-11-19T21:14:20.927Z", "min": "2026-11-19T20:44:33.209Z", "watermark": "2026-11-19T20:50:33.841Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 18, "numRowsUpdated": 24, "allUpdatesTimeMs": 53, "numRowsRemoved": 12, "allRemovalsTimeMs": 13, "commitTimeMs": 114, "memoryUsedBytes": 9440, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 16, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 4544}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 13298, "1": 13256, "0": 13440}}, "endOffset": {"transactions": {"2": 16618, "1": 16574, "0": 16800}}, "latestOffset": {"transactions": {"2": 16970, "1": 16926, "0": 17156}}, "numInputRows": 9998, "inputRowsPerSecond": 999.7000299970003, "processedRowsPerSecond": 6986.722571628232, "metrics": {"avgOffsetsBehindLatest": "353.3333333333333", "maxOffsetsBehindLatest": "356", "minOffsetsBehindLatest": "352"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 12}}
+-------------------------------------------
+Batch: 6
+-------------------------------------------
++------------------------------+----+------------+--------+---------+----------+-------+----------+----------+--------------------------+
+|tx_id                         |type|payer_wallet|payee_id|device_id|city      |channel|status    |amount_mad|event_time                |
++------------------------------+----+------------+--------+---------+----------+-------+----------+----------+--------------------------+
+|TX-validation-live-j2-00000354|P2P |W-0354      |W-0491  |D-0354   |Casablanca|APP    |INITIATED |135.98    |2026-11-19 21:15:10.519759|
+|TX-validation-live-j2-00000354|P2P |W-0354      |W-0491  |D-0354   |Casablanca|APP    |AUTHORIZED|135.98    |2026-11-19 21:15:10.569762|
+|TX-validation-live-j2-00000354|P2P |W-0354      |W-0491  |D-0354   |Casablanca|APP    |COMPLETED |135.98    |2026-11-19 21:15:10.619731|
+|TX-validation-live-j2-00000355|P2M |W-0355      |M-056   |D-0355   |Rabat     |QR     |INITIATED |136.35    |2026-11-19 21:15:10.669765|
+|TX-validation-live-j2-00000355|P2M |W-0355      |M-056   |D-0355   |Rabat     |QR     |AUTHORIZED|136.35    |2026-11-19 21:15:10.719781|
++------------------------------+----+------------+--------+---------+----------+-------+----------+----------+--------------------------+
+only showing top 5 rows
+
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:15:20.000Z", "batchId": 6, "numInputRows": 148, "inputRowsPerSecond": 14.80444133239972, "processedRowsPerSecond": 112.97709923664122, "durationMs": {"addBatch": 1143, "commitOffsets": 53, "getBatch": 0, "latestOffset": 12, "queryPlanning": 6, "triggerExecution": 1310, "walCommit": 95}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 16970, "1": 16926, "0": 17156}}, "endOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "numInputRows": 148, "inputRowsPerSecond": 14.80444133239972, "processedRowsPerSecond": 112.97709923664122, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 148}}
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:15:20.002Z", "batchId": 5, "numInputRows": 1207, "inputRowsPerSecond": 120.67586482703459, "processedRowsPerSecond": 468.3740783857198, "durationMs": {"addBatch": 2424, "commitOffsets": 42, "getBatch": 0, "latestOffset": 10, "queryPlanning": 5, "triggerExecution": 2577, "walCommit": 96}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 16618, "1": 16575, "0": 16800}}, "endOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "numInputRows": 1207, "inputRowsPerSecond": 120.67586482703459, "processedRowsPerSecond": 468.3740783857198, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+-------------------------------------------
+Batch: 5
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED| 2688|
+|Casablanca|  REVERSED|  253|
+|    Tanger|  REVERSED|  254|
+|Casablanca|  REJECTED|  485|
+|       Fes|  REJECTED|  487|
+|     Rabat|AUTHORIZED| 2687|
+|    Tanger| COMPLETED| 2426|
+| Marrakech|  REJECTED|  490|
+|    Tanger| INITIATED| 2684|
+|    Agadir| INITIATED| 2692|
+| Marrakech|  REVERSED|  252|
+|     Rabat|  REVERSED|  247|
+|    Agadir|  REJECTED|  485|
+|       Fes| COMPLETED| 2419|
+|Casablanca| INITIATED| 2660|
+|    Tanger|AUTHORIZED| 2687|
+|    Agadir|AUTHORIZED| 2703|
+|       Fes|  REVERSED|  248|
+| Marrakech| INITIATED| 2679|
+|     Rabat| INITIATED| 2717|
+|    Agadir| COMPLETED| 2427|
+|     Rabat| COMPLETED| 2403|
+|Casablanca| COMPLETED| 2410|
+|       Fes|AUTHORIZED| 2677|
+|Casablanca|AUTHORIZED| 2697|
+| Marrakech| COMPLETED| 2435|
+|    Agadir|  REVERSED|  247|
+|     Rabat|  REJECTED|  502|
+|    Tanger|  REJECTED|  477|
+| Marrakech|AUTHORIZED| 2682|
++----------+----------+-----+
+
+-------------------------------------------
+Batch: 5
+-------------------------------------------
++--------------------+----------+-----+
+|              window|      city|count|
++--------------------+----------+-----+
+|{2026-11-19 20:50...| Marrakech| 1389|
+|{2026-11-19 20:50...|       Fes| 1362|
+|{2026-11-19 20:50...|     Rabat| 1388|
+|{2026-11-19 20:50...|Casablanca| 1379|
+|{2026-11-19 20:50...|    Tanger| 1385|
+|{2026-11-19 20:50...|    Agadir| 1384|
++--------------------+----------+-----+
+
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:15:20.000Z", "batchId": 5, "numInputRows": 1208, "inputRowsPerSecond": 120.8120812081208, "processedRowsPerSecond": 282.903981264637, "durationMs": {"addBatch": 4102, "commitOffsets": 49, "getBatch": 0, "latestOffset": 11, "queryPlanning": 11, "triggerExecution": 4270, "walCommit": 96}, "eventTime": {"avg": "2026-11-19T21:14:24.404Z", "max": "2026-11-19T21:15:17.369Z", "min": "2026-11-19T20:59:53.973Z", "watermark": "2026-11-19T21:04:20.927Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 30, "allUpdatesTimeMs": 24, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 97, "memoryUsedBytes": 11200, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 20, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 16618, "1": 16574, "0": 16800}}, "endOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "numInputRows": 1208, "inputRowsPerSecond": 120.8120812081208, "processedRowsPerSecond": 282.903981264637, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:15:20.000Z", "batchId": 5, "numInputRows": 1208, "inputRowsPerSecond": 120.8120812081208, "processedRowsPerSecond": 243.254128070882, "durationMs": {"addBatch": 4789, "commitOffsets": 53, "getBatch": 0, "latestOffset": 11, "queryPlanning": 15, "triggerExecution": 4966, "walCommit": 96}, "eventTime": {"avg": "2026-11-19T21:14:24.404Z", "max": "2026-11-19T21:15:17.369Z", "min": "2026-11-19T20:59:53.973Z", "watermark": "2026-11-19T21:04:20.927Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 12, "numRowsUpdated": 13, "allUpdatesTimeMs": 34, "numRowsRemoved": 6, "allRemovalsTimeMs": 12, "commitTimeMs": 131, "memoryUsedBytes": 6688, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 20, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 3104}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 16618, "1": 16574, "0": 16800}}, "endOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "numInputRows": 1208, "inputRowsPerSecond": 120.8120812081208, "processedRowsPerSecond": 243.254128070882, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 6}}
+-------------------------------------------
+Batch: 6
+-------------------------------------------
++------+----+-----+
+|window|city|count|
++------+----+-----+
++------+----+-----+
+
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:15:30.000Z", "batchId": 6, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "durationMs": {"addBatch": 198, "commitOffsets": 39, "getBatch": 0, "latestOffset": 11, "queryPlanning": 12, "triggerExecution": 343, "walCommit": 80}, "eventTime": {"watermark": "2026-11-19T21:05:17.369Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 12, "numRowsUpdated": 0, "allUpdatesTimeMs": 2, "numRowsRemoved": 0, "allRemovalsTimeMs": 8, "commitTimeMs": 116, "memoryUsedBytes": 4320, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 24, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 3040}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 0}}
+-------------------------------------------
+Batch: 7
+-------------------------------------------
++-----------------------------------------+----+------------+--------+---------+-----+-------+---------+----------+-------------------------+
+|tx_id                                    |type|payer_wallet|payee_id|device_id|city |channel|status   |amount_mad|event_time               |
++-----------------------------------------+----+------------+--------+---------+-----+-------+---------+----------+-------------------------+
+|TX-PROBE-6544d6c3e13142ba8f0612dda7981985|P2M |W-PROBE     |M-001   |D-PROBE  |Rabat|APP    |COMPLETED|25.0      |2026-11-19 21:00:37.17246|
++-----------------------------------------+----+------------+--------+---------+-----+-------+---------+----------+-------------------------+
+
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:15:40.001Z", "batchId": 7, "numInputRows": 1, "inputRowsPerSecond": 0.1, "processedRowsPerSecond": 1.430615164520744, "durationMs": {"addBatch": 551, "commitOffsets": 35, "getBatch": 0, "latestOffset": 23, "queryPlanning": 7, "triggerExecution": 699, "walCommit": 81}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 1, "inputRowsPerSecond": 0.1, "processedRowsPerSecond": 1.430615164520744, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 1}}
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:15:40.001Z", "batchId": 6, "numInputRows": 1, "inputRowsPerSecond": 0.1, "processedRowsPerSecond": 0.7698229407236336, "durationMs": {"addBatch": 1140, "commitOffsets": 38, "getBatch": 0, "latestOffset": 21, "queryPlanning": 3, "triggerExecution": 1299, "walCommit": 96}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 1, "inputRowsPerSecond": 0.1, "processedRowsPerSecond": 0.7698229407236336, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+-------------------------------------------
+Batch: 6
+-------------------------------------------
++----------+----------+-----+
+|      city|    status|count|
++----------+----------+-----+
+|       Fes| INITIATED| 2688|
+|Casablanca|  REVERSED|  253|
+|    Tanger|  REVERSED|  254|
+|Casablanca|  REJECTED|  485|
+|       Fes|  REJECTED|  487|
+|     Rabat|AUTHORIZED| 2687|
+|    Tanger| COMPLETED| 2426|
+| Marrakech|  REJECTED|  490|
+|    Tanger| INITIATED| 2684|
+|    Agadir| INITIATED| 2692|
+| Marrakech|  REVERSED|  252|
+|     Rabat|  REVERSED|  247|
+|    Agadir|  REJECTED|  485|
+|       Fes| COMPLETED| 2419|
+|Casablanca| INITIATED| 2660|
+|    Tanger|AUTHORIZED| 2687|
+|    Agadir|AUTHORIZED| 2703|
+|       Fes|  REVERSED|  248|
+| Marrakech| INITIATED| 2679|
+|     Rabat| INITIATED| 2717|
+|    Agadir| COMPLETED| 2427|
+|     Rabat| COMPLETED| 2404|
+|Casablanca| COMPLETED| 2410|
+|       Fes|AUTHORIZED| 2677|
+|Casablanca|AUTHORIZED| 2697|
+| Marrakech| COMPLETED| 2435|
+|    Agadir|  REVERSED|  247|
+|     Rabat|  REJECTED|  502|
+|    Tanger|  REJECTED|  477|
+| Marrakech|AUTHORIZED| 2682|
++----------+----------+-----+
+
+-------------------------------------------
+Batch: 7
+-------------------------------------------
++------+----+-----+
+|window|city|count|
++------+----+-----+
++------+----+-----+
+
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:15:40.001Z", "batchId": 6, "numInputRows": 1, "inputRowsPerSecond": 0.1, "processedRowsPerSecond": 0.40584415584415584, "durationMs": {"addBatch": 2303, "commitOffsets": 44, "getBatch": 0, "latestOffset": 21, "queryPlanning": 12, "triggerExecution": 2464, "walCommit": 82}, "eventTime": {"avg": "2026-11-19T21:00:37.172Z", "max": "2026-11-19T21:00:37.172Z", "min": "2026-11-19T21:00:37.172Z", "watermark": "2026-11-19T21:05:17.369Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 1, "allUpdatesTimeMs": 12, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 81, "memoryUsedBytes": 9112, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 24, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 1, "inputRowsPerSecond": 0.1, "processedRowsPerSecond": 0.40584415584415584, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 30}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:15:40.001Z", "batchId": 7, "numInputRows": 1, "inputRowsPerSecond": 0.09999000099990002, "processedRowsPerSecond": 0.39261876717707106, "durationMs": {"addBatch": 2385, "commitOffsets": 42, "getBatch": 0, "latestOffset": 21, "queryPlanning": 14, "triggerExecution": 2547, "walCommit": 82}, "eventTime": {"avg": "2026-11-19T21:00:37.172Z", "max": "2026-11-19T21:00:37.172Z", "min": "2026-11-19T21:00:37.172Z", "watermark": "2026-11-19T21:05:17.369Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 12, "numRowsUpdated": 1, "allUpdatesTimeMs": 13, "numRowsRemoved": 0, "allRemovalsTimeMs": 2, "commitTimeMs": 88, "memoryUsedBytes": 4328, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 28, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 3040}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16981, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 1, "inputRowsPerSecond": 0.09999000099990002, "processedRowsPerSecond": 0.39261876717707106, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 0}}
+PROGRESS {"query": "raw_console", "id": "78f92d43-45ef-4e54-9050-324020df6398", "runId": "7a347d5b-bffa-4a07-b254-3bf7947c8c9d", "name": "raw_console", "timestamp": "2026-11-19T21:16:00.001Z", "batchId": 8, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "durationMs": {"latestOffset": 7, "triggerExecution": 7}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 0}}
+PROGRESS {"query": "bronze_raw", "id": "9c7489ea-858a-472d-830b-3b560e9ea1d6", "runId": "c99e99da-805c-479f-a50b-1fd7548954dc", "name": "bronze_raw", "timestamp": "2026-11-19T21:16:00.001Z", "batchId": 7, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "durationMs": {"latestOffset": 7, "triggerExecution": 7}, "stateOperators": [], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "FileSink[s3a://lake/bronze/transactions_raw/]", "numOutputRows": -1}}
+PROGRESS {"query": "city_status_complete", "id": "73dca3de-ffae-43a5-88b3-29a4270a96e3", "runId": "372b4563-f1d1-4c69-a0d7-e06ada858994", "name": "city_status_complete", "timestamp": "2026-11-19T21:16:00.001Z", "batchId": 7, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "durationMs": {"latestOffset": 7, "triggerExecution": 7}, "eventTime": {"watermark": "2026-11-19T21:05:17.369Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 30, "numRowsUpdated": 0, "allUpdatesTimeMs": 12, "numRowsRemoved": 0, "allRemovalsTimeMs": 0, "commitTimeMs": 81, "memoryUsedBytes": 9112, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 24, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 6928}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 0}}
+PROGRESS {"query": "watermark_windows", "id": "5f41a2a9-db3d-4cff-b015-08dca78933cb", "runId": "4eda5a28-b325-45ae-907a-e3c06ad81cc2", "name": "watermark_windows", "timestamp": "2026-11-19T21:16:00.001Z", "batchId": 8, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "durationMs": {"latestOffset": 7, "triggerExecution": 7}, "eventTime": {"watermark": "2026-11-19T21:05:17.369Z"}, "stateOperators": [{"operatorName": "stateStoreSave", "numRowsTotal": 12, "numRowsUpdated": 0, "allUpdatesTimeMs": 13, "numRowsRemoved": 0, "allRemovalsTimeMs": 2, "commitTimeMs": 88, "memoryUsedBytes": 4328, "numRowsDroppedByWatermark": 0, "numShufflePartitions": 2, "numStateStoreInstances": 2, "customMetrics": {"loadedMapCacheHitCount": 28, "loadedMapCacheMissCount": 0, "stateOnCurrentVersionSizeBytes": 3040}}], "sources": [{"description": "KafkaV2[Subscribe[transactions]]", "startOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "endOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "latestOffset": {"transactions": {"2": 17003, "1": 16982, "0": 17216}}, "numInputRows": 0, "inputRowsPerSecond": 0.0, "processedRowsPerSecond": 0.0, "metrics": {"avgOffsetsBehindLatest": "0.0", "maxOffsetsBehindLatest": "0", "minOffsetsBehindLatest": "0"}}], "sink": {"description": "org.apache.spark.sql.execution.streaming.ConsoleTable$@35fc02f3", "numOutputRows": 0}}
+26/11/19 21:17:00 WARN Dispatcher: Message RemoteProcessDisconnected(172.24.0.8:47212) dropped. Could not find BlockManagerEndpoint1.
+26/11/19 21:17:00 WARN Dispatcher: Message RemoteProcessDisconnected(172.24.0.8:47212) dropped. Could not find BlockManagerMaster.

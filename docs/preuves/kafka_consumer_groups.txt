@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "docker",
+      "compose",
+      "-p",
+      "sahlpay-j2",
+      "exec",
+      "-T",
+      "kafka",
+      "/opt/kafka/bin/kafka-consumer-groups.sh",
+      "--bootstrap-server",
+      "kafka:9092",
+      "--all-groups",
+      "--describe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "-p",
+      "sahlpay-j2",
+      "exec",
+      "-T",
+      "kafka",
+      "/opt/kafka/bin/kafka-consumer-groups.sh",
+      "--bootstrap-server",
+      "kafka:9092",
+      "--group",
+      "sahlpay-production",
+      "--describe"
+    ],
+    "returncode": 0,
+    "stdout": "\nError: Consumer group 'sahlpay-production' does not exist.\n",
+    "stderr": ""
+  }
+]

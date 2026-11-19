@@ -1,0 +1,58 @@
+APPAREILS PARTAGES
++------------------+------------------+---------------+
+|wallet_a          |wallet_b          |device         |
++------------------+------------------+---------------+
+|wallet:W-SHARED-00|wallet:W-SHARED-01|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-02|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-03|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-04|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-05|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-06|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-07|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-08|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-09|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-10|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-11|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-12|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-13|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-14|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-15|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-16|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-17|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-18|device:D-SHARED|
+|wallet:W-SHARED-00|wallet:W-SHARED-19|device:D-SHARED|
+|wallet:W-SHARED-01|wallet:W-SHARED-02|device:D-SHARED|
++------------------+------------------+---------------+
+only showing top 20 rows
+CYCLES
++----------------+----------------+----------------+
+|a               |b               |c               |
++----------------+----------------+----------------+
+|wallet:W-CYCLE-A|wallet:W-CYCLE-B|wallet:W-CYCLE-C|
++----------------+----------------+----------------+
+CHAINES
++-------------+-------------+--------------+
+|sender       |intermediary |merchant      |
++-------------+-------------+--------------+
+|wallet:W-0017|wallet:W-0132|merchant:M-033|
+|wallet:W-0017|wallet:W-0132|merchant:M-233|
+|wallet:W-0018|wallet:W-0139|merchant:M-140|
+|wallet:W-0018|wallet:W-0139|merchant:M-240|
+|wallet:W-0019|wallet:W-0146|merchant:M-047|
+|wallet:W-0019|wallet:W-0146|merchant:M-147|
+|wallet:W-0022|wallet:W-0167|merchant:M-068|
+|wallet:W-0022|wallet:W-0167|merchant:M-168|
+|wallet:W-0023|wallet:W-0174|merchant:M-075|
+|wallet:W-0023|wallet:W-0174|merchant:M-275|
+|wallet:W-0024|wallet:W-0181|merchant:M-182|
+|wallet:W-0024|wallet:W-0181|merchant:M-282|
+|wallet:W-0027|wallet:W-0202|merchant:M-003|
+|wallet:W-0027|wallet:W-0202|merchant:M-203|
+|wallet:W-0028|wallet:W-0209|merchant:M-110|
+|wallet:W-0028|wallet:W-0209|merchant:M-210|
+|wallet:W-0029|wallet:W-0216|merchant:M-017|
+|wallet:W-0029|wallet:W-0216|merchant:M-117|
+|wallet:W-0032|wallet:W-0237|merchant:M-038|
+|wallet:W-0032|wallet:W-0237|merchant:M-138|
++-------------+-------------+--------------+
+only showing top 20 rows

@@ -1,0 +1,90 @@
+{
+  "total_by_city": [
+    [
+      "Agadir",
+      4468634.31
+    ],
+    [
+      "Casablanca",
+      4465622.7600000035
+    ],
+    [
+      "Fes",
+      4475967.880000001
+    ],
+    [
+      "Marrakech",
+      4471109.620000002
+    ],
+    [
+      "Rabat",
+      4437284.130000001
+    ],
+    [
+      "Tanger",
+      4456454.760000002
+    ]
+  ],
+  "mean_by_city": [
+    [
+      "Agadir",
+      1891.8858213378492
+    ],
+    [
+      "Casablanca",
+      1901.0739719029389
+    ],
+    [
+      "Fes",
+      1897.4005426027982
+    ],
+    [
+      "Marrakech",
+      1885.7484690004226
+    ],
+    [
+      "Rabat",
+      1894.6559052092232
+    ],
+    [
+      "Tanger",
+      1884.3360507399584
+    ]
+  ],
+  "top_5": [
+    [
+      "M-138",
+      66
+    ],
+    [
+      "M-002",
+      65
+    ],
+    [
+      "M-038",
+      64
+    ],
+    [
+      "M-105",
+      64
+    ],
+    [
+      "M-135",
+      64
+    ]
+  ],
+  "city_seconds": 13.215577205000045,
+  "stage_ids_city_total": [
+    0,
+    1
+  ],
+  "stage_count_city_total": 2,
+  "seconds_all": 15.541555564000078
+}
+(2) PythonRDD[14] at collect at /workspace/src/batch/02_rdd_batch.py:18 []
+ |  MapPartitionsRDD[5] at mapPartitions at PythonRDD.scala:160 []
+ |  ShuffledRDD[4] at partitionBy at NativeMethodAccessorImpl.java:0 []
+ +-(2) PairwiseRDD[3] at reduceByKey at /workspace/src/batch/02_rdd_batch.py:10 []
+    |  PythonRDD[2] at reduceByKey at /workspace/src/batch/02_rdd_batch.py:10 []
+    |  s3a://lake/bronze/history/transactions_history.jsonl MapPartitionsRDD[1] at textFile at NativeMethodAccessorImpl.java:0 []
+    |  s3a://lake/bronze/history/transactions_history.jsonl HadoopRDD[0] at textFile at NativeMethodAccessorImpl.java:0 []
